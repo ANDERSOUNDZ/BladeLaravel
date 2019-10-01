@@ -67,9 +67,20 @@ class CategoriasController extends Controller
 
 
         //Inicio - retornar informacion de la base de datos
-            $categorias = Categoria::orderBy('nombre','asc')->get();
+        /*
+                //$categorias = Categoria::orderBy('nombre','asc')->get();
+            //manera en la que puedo consultar en la base las columnas que quieor o informacion que quiero 
+                $categorias = Categoria::where('nombre','nada')->orderBy('nombre','asc')->get();
+                        //Para poder tomar o saber que informacion tenemos dentro de esa variable(para conocer y ver informacion Json de las tablas), lo que seria un consoleLog en Angular, podemos utilizar esta variable "dd($variable)"
+                        //dd($categorias);
             return view('categorias.index', compact('categorias'));
+            */
         //Fin - retornar informacion de la base de datos
+
+        $categorias = Categoria::orderBy('nombre','asc')->get();
+                        //Para poder tomar o saber que informacion tenemos dentro de esa variable(para conocer y ver informacion Json de las tablas), lo que seria un consoleLog en Angular, podemos utilizar esta variable "dd($variable)"
+                        //dd($categorias);
+            return view('categorias.index', compact('categorias'));
 
     }
 
